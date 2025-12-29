@@ -1,70 +1,33 @@
----
+# Multithreaded Buffer Demo 🚀
 
+![Build Status](https://github.com/ubokka/multithreaded-buffer/actions/workflows/ci.yml/badge.svg)
+![C++ Standard](https://img.shields.io/badge/C%2B%2B-17-blue.svg)
 
+A high-performance, **thread-safe circular buffer** implementation in C++. This project demonstrates core Operating Systems (OS) and Embedded Systems concepts, specifically the **Producer-Consumer pattern**.
 
-```markdown
+## 🧠 Key Engineering Concepts
+* **Circular Buffer (Ring Buffer):** Efficient fixed-size memory management.
+* **Thread Synchronization:** Uses `std::mutex` and `std::unique_lock`.
+* **Efficient Waiting:** Utilizes `std::condition_variable` to prevent busy-waiting.
+* **RAII Pattern:** Automatic resource management.
 
-\# Multithreaded Buffer Demo 🚀
-
-
-
-!\[Build Status](https://github.com/<YOUR\_GITHUB\_USERNAME>/multithreaded-buffer/actions/workflows/ci.yml/badge.svg)
-
-!\[C++ Standard](https://img.shields.io/badge/C%2B%2B-17-blue.svg)
-
-!\[Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)
-
-
-
-A high-performance, \*\*thread-safe circular buffer\*\* implementation in C++. This project demonstrates core Operating Systems (OS) and Embedded Systems concepts, specifically the \*\*Producer-Consumer pattern\*\* using modern C++ synchronization primitives.
-
-
-
-
-
-
-
-\## 🧠 Key Engineering Concepts
-
-This project implements several critical software engineering patterns:
-
-
-
-\* \*\*Circular Buffer (Ring Buffer):\*\* Efficient memory management using a fixed-size array that wraps around, preventing unnecessary memory allocations.
-
-\* \*\*Thread Synchronization:\*\* Uses `std::mutex` and `std::unique\_lock` to ensure data integrity (preventing race conditions).
-
-\* \*\*Efficient Waiting:\*\* Utilizes `std::condition\_variable` to put threads to sleep when the buffer is full/empty, saving CPU cycles compared to "busy-waiting" or polling.
-
-\* \*\*RAII Pattern:\*\* Resource Acquisition Is Initialization is used for automatic mutex management.
-
-
-
-\## 🛠 Project Structure
-
+## 🛠 Project Structure
 ```text
-
 multithreaded-buffer/
+├── .github/workflows/  # CI/CD Pipeline
+├── include/            # RingBuffer Header
+├── src/                # Application Source
+├── tests/              # Unit Tests
+└── CMakeLists.txt      # Build Logic
+\```
 
-├── .github/workflows/  # CI/CD Pipeline (GitHub Actions)
-
-├── include/            # Header files (RingBuffer implementation)
-
-├── src/                # Application source code
-
-├── tests/              # Unit tests for thread integrity
-
-└── CMakeLists.txt      # Build system configuration
-
-
-
-```
-
-
-
-\## 🚀 Getting Started
-
-
+## 🚀 Getting Started
+```bash
+mkdir build && cd build
+cmake ..
+make
+./buffer_demo
+\```
 
 \### Prerequisites
 
