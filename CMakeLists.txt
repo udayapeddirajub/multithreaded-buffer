@@ -13,7 +13,6 @@ include_directories(include)
 # 1. Main Demo Executable
 add_executable(buffer_demo 
     src/main.cpp 
-    src/RingBuffer.cpp
 )
 target_link_libraries(buffer_demo PRIVATE Threads::Threads)
 
