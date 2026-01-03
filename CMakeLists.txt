@@ -19,6 +19,5 @@ target_link_libraries(buffer_demo PRIVATE Threads::Threads)
 # 2. Test Executable
 add_executable(buffer_tests 
     tests/test_main.cpp 
-    src/RingBuffer.cpp
 )
 target_link_libraries(buffer_tests PRIVATE Threads::Threads)
